@@ -15,6 +15,7 @@ interface NetworkService {
 
     @GET("v2/everything")
     fun getNewsBySearch(@Query("apiKey") apiKey: String,
-                        @Query("q") query: String) : Call<ListingsResponse>
+                        @Query("q") query: String,
+                        @Query("sortBy") sortBy:String) : Call<ListingsResponse>
 
 }

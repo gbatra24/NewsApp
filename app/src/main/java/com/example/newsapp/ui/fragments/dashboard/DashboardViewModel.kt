@@ -12,14 +12,14 @@ import retrofit2.Response
 
 class DashboardViewModel : ViewModel() {
 
-    private var searchResponseLiveData = MutableLiveData<ListingsResponse>()
-    private var searchErrorLiveData = MutableLiveData<String>()
+    var searchResponseLiveData = MutableLiveData<ListingsResponse>()
+    var searchErrorLiveData = MutableLiveData<String>()
 
     fun searchNews(query: String) {
         var client = RetrofitClient.getInstance()
         var service = client.create(NetworkService::class.java)
 
-        service.getNewsBySearch(Constants.API_KEY, query)
+        service.getNewsBySearch(Constants.API_KEY, query, "popularity")
             .enqueue(object : Callback<ListingsResponse> {
                 override fun onResponse(
                     call: Call<ListingsResponse>,

@@ -44,12 +44,24 @@
             android:layout_margin="16dp"
             android:background="@color/cardview_shadow_start_color"
             android:hint="Search News"
+            android:imeOptions="actionSearch"
+            android:inputType="text"
             android:textColorHint="@android:color/darker_gray"
             android:textColor="@color/black"
             android:padding="8dp"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tv_settings" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_search_news"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/et_search"
+            android:layout_marginTop="8dp"
+            tools:listitem="@layout/rv_items_news_search"/>
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
